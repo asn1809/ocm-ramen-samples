@@ -1,0 +1,17 @@
+apiVersion: ramendr.openshift.io/v1alpha1
+kind: DRPlacementControl
+metadata:
+  labels:
+    app: deployment-rbd
+  name: drpc1
+  namespace: deployment-rbd
+spec:
+  drPolicyRef:
+    name: dr-policy
+  placementRef:
+    kind: Placement
+    name: placement1
+  preferredCluster: dr1
+  pvcSelector:
+    matchLabels:
+      appname: busybox
